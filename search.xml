@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>测试博客</title>
+    <url>/2023/09/23/first-blog/</url>
+    <content><![CDATA[<p>这里是摘要，点击查看全文</p>
+<span id="more"></span>
+<p>下午好各位。下面是头像图片：</p>
+<p><img src="https://raw.githubusercontent.com/Went-Liang/ImageTG/main/PicGo/img/2.jpeg" alt="img1"></p>
+<p>博客搭建参考 <a href="https://mobbu.space/">https://mobbu.space/</a>，要注意的是更换主题后，记得把blog&#x2F;_config.yml里的主题改成<code>theme: next</code></p>
+<p>添加数学公式需要在md头部加<code>mathjax: true</code>，公式： $f(x) &#x3D; x^2$。</p>
+<p>其他md用法见<a href="https://mobbu.space/2023/08/08/20230808_markdownLanguage/">https://mobbu.space/2023/08/08/20230808_markdownLanguage&#x2F;</a></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+  </entry>
+</search>
