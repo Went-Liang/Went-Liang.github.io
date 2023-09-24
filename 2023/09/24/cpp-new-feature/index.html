@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="一些c++新特性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c++新特性">
+<meta property="og:url" content="http://example.com/2023/09/24/cpp-new-feature/index.html">
+<meta property="og:site_name" content="札记">
+<meta property="og:description" content="一些c++新特性">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1ca3d34d1f6a415292eca129e272801e.png">
+<meta property="article:published_time" content="2023-09-24T03:12:01.598Z">
+<meta property="article:modified_time" content="2023-09-24T03:14:31.224Z">
+<meta property="article:author" content="liang">
+<meta property="article:tag" content="c++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/1ca3d34d1f6a415292eca129e272801e.png">
+
+<link rel="canonical" href="http://example.com/2023/09/24/cpp-new-feature/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>c++新特性 | 札记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">札记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/24/cpp-new-feature/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/background.png">
+      <meta itemprop="name" content="liang">
+      <meta itemprop="description" content="实践，记录，总结，抽象">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="札记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          c++新特性
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-09-24 11:12:01 / 修改时间：11:14:31" itemprop="dateCreated datePublished" datetime="2023-09-24T11:12:01+08:00">2023-09-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>一些c++新特性</p>
+<span id="more"></span>
+
+<h1 id="nodiscard"><a href="#nodiscard" class="headerlink" title="[[nodiscard]]"></a>[[nodiscard]]</h1><p>c++17引入，用于编译时检查有没有获取返回值</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">[[nodiscard]] <span class="function"><span class="type">int</span> <span class="title">fi</span><span class="params">()</span>              <span class="comment">//修饰函数返回值</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">class</span> [[nodiscard]] C&#123;&#125;;            <span class="comment">//修饰类</span></span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">class</span> [[nodiscard]] E&#123;e1, e2&#125;; <span class="comment">//修饰枚举类</span></span><br><span class="line"> </span><br><span class="line"><span class="function">C <span class="title">fc</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">C</span>();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">E <span class="title">fe</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> E::e1;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">fi</span>();    <span class="comment">//没有使用fi的返回值，告警：ignoring return value of &#x27;int fi()&#x27;, declared with attribute nodiscard</span></span><br><span class="line">    <span class="built_in">fc</span>();    <span class="comment">//没有使用fc的返回值，告警：ignoring returned value of type &#x27;C&#x27;, declared with attribute nodiscard</span></span><br><span class="line">    <span class="built_in">fe</span>();    <span class="comment">//没有使用fe的返回值，告警：ignoring returned value of type &#x27;E&#x27;, declared with attribute nodiscard</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/jiemashizhen/article/details/125567512">https://blog.csdn.net/jiemashizhen/article/details/125567512</a></p>
+</blockquote>
+<h1 id="std-enable-shared-from-this"><a href="#std-enable-shared-from-this" class="headerlink" title="std::enable_shared_from_this"></a>std::enable_shared_from_this</h1><p>c++11引入</p>
+<p>当一个类被共享智能指针 share_ptr 管理，且在类的成员函数里需要把<strong>当前类对象</strong>作为参数传给其他函数时，这时就<strong>需要传递一个指向自身的 share_ptr</strong>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 正确</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Good</span> : std::enable_shared_from_this&lt;Good&gt; <span class="comment">// note: public inheritance</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">std::shared_ptr&lt;Good&gt; <span class="title">getptr</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">shared_from_this</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 错误的用法：用不安全的表达式试图获得 this 的 shared_ptr 对象</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Bad</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">std::shared_ptr&lt;Bad&gt; <span class="title">getptr</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> std::<span class="built_in">shared_ptr</span>&lt;Bad&gt;(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">Bad</span>() &#123; std::cout &lt;&lt; <span class="string">&quot;Bad::~Bad() called\n&quot;</span>; &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>错误的用法中getptr函数会导致问题，因为它使用this指针构造了一个新的std::shared_ptr。这将导致在析构时调用两次析构函数，从而导致未定义行为。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/breadheart/article/details/112451022">https://blog.csdn.net/breadheart/article/details/112451022</a></p>
+</blockquote>
+<h1 id="std-variant"><a href="#std-variant" class="headerlink" title="std::variant"></a>std::variant</h1><p>功能类似union，union能够保存可能类型列表之一。但是不知道它们当前持有的值的类型。<br>std::variant可以知道类型，即使用index()知道时类型列表的第几个</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;variant&gt;</span></span></span><br><span class="line"> </span><br><span class="line">std::variant&lt;<span class="type">int</span>, std::string&gt; var&#123;<span class="string">&quot;hi&quot;</span>&#125;; <span class="comment">// initialized with string alternative</span></span><br><span class="line">std::cout &lt;&lt; var.<span class="built_in">index</span>(); <span class="comment">// prints 1</span></span><br><span class="line">var = <span class="number">42</span>; <span class="comment">// now holds int alternative</span></span><br><span class="line">std::cout &lt;&lt; var.<span class="built_in">index</span>(); <span class="comment">// prints 0</span></span><br><span class="line"></span><br><span class="line">std::string s = std::<span class="built_in">get</span>&lt;std::string&gt;(var); <span class="comment">// access by type</span></span><br><span class="line"><span class="type">int</span> i = std::<span class="built_in">get</span>&lt;<span class="number">0</span>&gt;(var); <span class="comment">// access by index</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>variant 可以正确调用构造析构函数，等价于</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> &#123;</span><br><span class="line"> <span class="type">int</span> type_; </span><br><span class="line"> <span class="keyword">union</span>&#123; </span><br><span class="line"> 	<span class="keyword">struct</span> &#123;&#125; a; </span><br><span class="line"> 	<span class="keyword">struct</span> &#123;&#125; b; </span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/janeqi1987/article/details/100568096">https://blog.csdn.net/janeqi1987/article/details/100568096</a></p>
+</blockquote>
+<h1 id="std-optional"><a href="#std-optional" class="headerlink" title="std::optional"></a>std::optional</h1><p>用于一个变量不一定有值的情况</p>
+<p>比如，在判断bool的函数如何抛出异常，不可能让异常也是false</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">getBoolValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xxx) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;  <span class="comment">// 计算失败时返回的false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// do some work</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;  <span class="comment">// 计算成功时返回的false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>查看一个optional对象是否有值，可以直接用if，或者用has_value()</p>
+<p>当一个optional有值时，可以通过用指针的方式(*号和-&gt;号)来使用它，或者用.value()拿到它的值：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;optional&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function">optional&lt;<span class="type">bool</span>&gt; <span class="title">getBoolValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xxx) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nullopt</span>;  <span class="comment">// 计算失败时返回</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// do some work</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;  <span class="comment">// 计算成功时返回的false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">optional&lt;<span class="type">int</span>&gt; o1;  <span class="comment">//什么都不写时默认初始化为nullopt</span></span><br><span class="line">optional&lt;<span class="type">int</span>&gt; o2 = <span class="literal">nullopt</span>;  <span class="comment">//初始化为无值</span></span><br><span class="line">optional&lt;<span class="type">int</span>&gt; o3 = <span class="number">10</span>;  <span class="comment">//用一个T类型的值来初始化</span></span><br><span class="line"></span><br><span class="line">optional&lt;<span class="type">int</span>&gt; o1;</span><br><span class="line"><span class="keyword">if</span> (o1) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;o1 has value\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (o1.<span class="built_in">has_value</span>()) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;o1 has value\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yuejisuo1948/article/details/118440275">https://blog.csdn.net/yuejisuo1948/article/details/118440275</a></p>
+</blockquote>
+<h1 id="std-any"><a href="#std-any" class="headerlink" title="std::any"></a>std::any</h1><p>c++17</p>
+<p>代替void*</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">std::any a; <span class="comment">// a is empty</span></span><br><span class="line">std::any b = <span class="number">4.3</span>; <span class="comment">// b has value 4.3 of type double</span></span><br><span class="line"> </span><br><span class="line">a = <span class="number">42</span>; <span class="comment">// a has value 42 of type int</span></span><br><span class="line">b = std::string&#123;<span class="string">&quot;hi&quot;</span>&#125;; <span class="comment">// b has value &quot;hi&quot; of type std::string</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> (a.<span class="built_in">type</span>() == <span class="built_in">typeid</span>(std::string)) </span><br><span class="line">&#123;</span><br><span class="line">    std::string s = std::<span class="built_in">any_cast</span>&lt;std::string&gt;(a);</span><br><span class="line">    <span class="built_in">useString</span>(s);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (a.<span class="built_in">type</span>() == <span class="built_in">typeid</span>(<span class="type">int</span>)) </span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">useInt</span>(std::<span class="built_in">any_cast</span>&lt;<span class="type">int</span>&gt;(a));</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/janeqi1987/article/details/100568181">https://blog.csdn.net/janeqi1987/article/details/100568181</a></p>
+</blockquote>
+<h1 id="std-visit"><a href="#std-visit" class="headerlink" title="std::visit"></a>std::visit</h1><p>c++ 17</p>
+<p>根据第二个参数的类型来执行第一个参数（函数）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;variant&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">MyVisitor</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">double</span> d)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">        std::cout &lt;&lt; d &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">int</span> i)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">        std::cout &lt;&lt; i &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">const</span> std::string&amp; s)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">        std::cout &lt;&lt; s &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">std::variant&lt;<span class="type">int</span>, <span class="type">double</span>, std::string&gt; <span class="title">var1</span><span class="params">(<span class="number">42</span>)</span>, <span class="title">var2</span><span class="params">(<span class="number">3.14</span>)</span>, <span class="title">var3</span><span class="params">(<span class="string">&quot;visit&quot;</span>)</span></span>;</span><br><span class="line"> </span><br><span class="line">    std::<span class="built_in">visit</span>(<span class="built_in">MyVisitor</span>(), var1); <span class="comment">// calls operator() for matching int type</span></span><br><span class="line"> </span><br><span class="line">    std::<span class="built_in">visit</span>(<span class="built_in">MyVisitor</span>(), var2); <span class="comment">// calls operator() for matching double type</span></span><br><span class="line"> </span><br><span class="line">    std::<span class="built_in">visit</span>(<span class="built_in">MyVisitor</span>(), var3); <span class="comment">// calls operator() for matching std::string type</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/janeqi1987/article/details/100568146">https://blog.csdn.net/janeqi1987/article/details/100568146</a></p>
+</blockquote>
+<h1 id="std-string-view"><a href="#std-string-view" class="headerlink" title="std::string_view"></a>std::string_view</h1><p>c++ 17</p>
+<p>像std::string一样处理字符序列，而不需要为这些字符序列分配内存。 </p>
+<p>std::string_view只由一个指针和一个长度组成，标识了一段不属于string_view的字符数据，视图不能修改这段数据。 因此，复制string_view是一个浅层操作:不会复制任何字符串数据。</p>
+<p><img src="https://img-blog.csdnimg.cn/1ca3d34d1f6a415292eca129e272801e.png" alt="在这里插入图片描述"></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/529073150">https://zhuanlan.zhihu.com/p/529073150</a></p>
+</blockquote>
+<h1 id="std-is-same-v"><a href="#std-is-same-v" class="headerlink" title="std::is_same_v"></a>std::is_same_v</h1><p>判断输入的类型是否是指定的模板类型</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="type">int</span>  <span class="title">getValueType</span><span class="params">(T v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (std::is_same_v&lt;T, <span class="type">int</span>&gt;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="std-decay-t"><a href="#std-decay-t" class="headerlink" title="std::decay_t"></a>std::decay_t</h1><p>decltype根据表达式推导类型</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">decltype</span>(x) y = <span class="number">1</span>;            <span class="comment">// y -&gt; int</span></span><br><span class="line"><span class="keyword">decltype</span>(x + y) z = <span class="number">0</span>;        <span class="comment">// z -&gt; int</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span>&amp; i = x;</span><br><span class="line"><span class="keyword">decltype</span>(i) j = y;            <span class="comment">// j -&gt; const int&amp;</span></span><br><span class="line"><span class="function"><span class="type">const</span> <span class="title">decltype</span><span class="params">(z)</span> *p </span>= &amp;z;    <span class="comment">// *p -&gt; const int, p -&gt; const int*</span></span><br><span class="line"><span class="keyword">decltype</span>(z) *m = &amp;z;          <span class="comment">// *m -&gt; int, m -&gt; int*</span></span><br><span class="line"><span class="keyword">decltype</span>(m)* n = &amp;m;          <span class="comment">// *n -&gt; int*, n -&gt; int**</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>liang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2023/09/24/cpp-new-feature/" title="c++新特性">http://example.com/2023/09/24/cpp-new-feature/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/c/" rel="tag"># c++</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/09/23/first-blog/" rel="prev" title="测试博客">
+      <i class="fa fa-chevron-left"></i> 测试博客
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nodiscard"><span class="nav-number">1.</span> <span class="nav-text">[[nodiscard]]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#std-enable-shared-from-this"><span class="nav-number">2.</span> <span class="nav-text">std::enable_shared_from_this</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#std-variant"><span class="nav-number">3.</span> <span class="nav-text">std::variant</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#std-optional"><span class="nav-number">4.</span> <span class="nav-text">std::optional</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#std-any"><span class="nav-number">5.</span> <span class="nav-text">std::any</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#std-visit"><span class="nav-number">6.</span> <span class="nav-text">std::visit</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#std-string-view"><span class="nav-number">7.</span> <span class="nav-text">std::string_view</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#std-is-same-v"><span class="nav-number">8.</span> <span class="nav-text">std::is_same_v</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#std-decay-t"><span class="nav-number">9.</span> <span class="nav-text">std::decay_t</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="liang"
+      src="/images/background.png">
+  <p class="site-author-name" itemprop="name">liang</p>
+  <div class="site-description" itemprop="description">实践，记录，总结，抽象</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Went-Liang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Went-Liang" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/wenteng_liang@163.com" title="E-Mail → wenteng_liang@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links Website
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.csdn.net/weixin_42764932?spm=1011.2415.3001.5343" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_42764932?spm&#x3D;1011.2415.3001.5343" rel="noopener" target="_blank">CSDN</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023-09 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客数<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+$(document).ready(function() {
+
+    var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+    var countOffset = 20000;  // 初始化首次数据
+
+    function fixCount() {            
+       if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
+        {
+            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); 
+            clearInterval(int);
+        }                  
+        if ($("#busuanzi_container_site_pv").css("display") != "none")
+        {
+            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffset); // 加上初始数据 
+            clearInterval(int); // 停止检测
+        }  
+    }
+       	
+});
+</script> 
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
