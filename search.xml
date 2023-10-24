@@ -79,9 +79,15 @@
 <p>博客搭建参考 <a href="https://mobbu.space/">https://mobbu.space/</a>，要注意的是更换主题后，记得把blog&#x2F;_config.yml里的主题改成<code>theme: next</code></p>
 <p>添加数学公式需要在md头部加<code>mathjax: true</code>，公式： $f(x) &#x3D; x^2$。</p>
 <p>其他md用法见<a href="https://mobbu.space/2023/08/08/20230808_markdownLanguage/">https://mobbu.space/2023/08/08/20230808_markdownLanguage&#x2F;</a></p>
+<p>每次修改后都使用这三条命令将本地修改部分同步到github上：</p>
+<pre><code>hexo clean   # 清除缓存文件 db.json 和已生成的静态文件 public
+hexo g       # 生成网站静态文件到默认设置的 public 文件夹
+hexo s       # 在本地进行预览网页效果再决
+hexo d       # 生成网站静态文件，并部署到指定仓库 
+</code></pre>
 ]]></content>
       <categories>
-        <category>测试</category>
+        <category>博客使用指南</category>
       </categories>
   </entry>
 </search>
