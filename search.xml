@@ -1,6 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>摄影</title>
+    <url>/2023/10/24/camera/</url>
+    <content><![CDATA[<p>相机基本概念</p>
+<span id="more"></span>
+<h1 id="相机"><a href="#相机" class="headerlink" title="相机"></a>相机</h1><h2 id="基本分类"><a href="#基本分类" class="headerlink" title="基本分类"></a>基本分类</h2><h3 id="卡片机"><a href="#卡片机" class="headerlink" title="卡片机"></a>卡片机</h3><p>不可更换镜头，不能更换相机自带变焦外的其他焦段，便携</p>
+<h3 id="单反"><a href="#单反" class="headerlink" title="单反"></a>单反</h3><p>机身内置有反光板和五棱镜，单反的取景是每次经过机内的五棱镜反射到取景器中观看也称光学取景。因为机身多了反光板和五棱镜，在同样规格下单反机身会比微单更大一些。</p>
+<p>发展技术成熟，握持感好、续航优秀、镜头群丰富、价格相对便宜，重量高、机身庞大便携性差、连拍速度不及微单</p>
+<h3 id="微单-无反相机"><a href="#微单-无反相机" class="headerlink" title="微单(无反相机)"></a>微单(无反相机)</h3><p>“无反”即是说它里边没有单反相机里面的那个反光镜以及五棱镜，它的取景器是一个电子显示屏，外界光线通过镜头最后由电子取景显示画面，也称电子取景。没有反光板每次拍摄的机械运动限制，微单在连拍速度比单反更快。</p>
+<p>体积相对小巧、较易上手、连拍速度更快，镜头丰富程度不如单反，价格也比单反更贵</p>
+<h2 id="硬件参数"><a href="#硬件参数" class="headerlink" title="硬件参数"></a>硬件参数</h2><h3 id="画幅"><a href="#画幅" class="headerlink" title="画幅"></a>画幅</h3><p>画幅指的是各种大小的传感器<br><img src="https://raw.githubusercontent.com/Went-Liang/ImageTG/main/PicGo/img/huafu.jpg" alt="画幅"></p>
+<ol>
+<li><p>根据下图“焦距与视角”所示，画幅越小，视角越小。</p>
+</li>
+<li><p>在相同像素的情况下，画幅越大，每个像素的面积就会相对越大，接受光的能力就会越强，因此每个像素所呈现的品质就会更好，而整张照片的画质也就因此更好。</p>
+</li>
+</ol>
+<h3 id="焦距"><a href="#焦距" class="headerlink" title="焦距"></a>焦距</h3><p>焦距的定义是：镜头的光学中心到感光元件之间的距离。</p>
+<p>比如一支镜头：Z DX 18-140mm f&#x2F;3.5-6.3 VR，其中18-140mm就是表示了这支镜头的焦距。焦距有两个数字表示这是一支变焦镜头，焦距覆盖了从18mm到140mm的整个焦距段。这是一支$140 &#x2F; 18$倍的变焦镜头。</p>
+<ol>
+<li>焦距越小，视角越广，焦段越大，照的更远。<br><img src="https://raw.githubusercontent.com/Went-Liang/ImageTG/main/PicGo/img/jiaoju.jpg" alt="焦距与视角"></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>焦距</th>
+<th>视角</th>
+<th>场景</th>
+<th>拍摄距离</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>超广角</td>
+<td>24mm以下</td>
+<td>大</td>
+<td>大场景，建筑，风景，新闻摄影</td>
+<td>近</td>
+<td>透视感强（远近变化明显），景深较深，形变大，很强的视觉冲击力</td>
+</tr>
+<tr>
+<td>广角</td>
+<td>24mm和28mm</td>
+<td></td>
+<td>风景</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>人文眼</td>
+<td>35mm</td>
+<td></td>
+<td>人文</td>
+<td></td>
+<td>既能够将背景囊括进来，又可以保留足够的景深</td>
+</tr>
+<tr>
+<td>标准镜头</td>
+<td>50mm</td>
+<td></td>
+<td>人文、人像</td>
+<td></td>
+<td>最接近人眼看到的感受</td>
+</tr>
+<tr>
+<td>人像镜头</td>
+<td>85mm</td>
+<td></td>
+<td>人像</td>
+<td></td>
+<td>背景虚化好，画面裁切能力强，突出人</td>
+</tr>
+<tr>
+<td>微距镜头</td>
+<td>100mm</td>
+<td></td>
+<td>微距镜头</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>人像</td>
+<td>135mm</td>
+<td></td>
+<td>人像</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>长焦镜头</td>
+<td>200mm和300mm</td>
+<td></td>
+<td>花鸟，运动，人像</td>
+<td></td>
+<td>背景虚化效果超级强烈</td>
+</tr>
+<tr>
+<td>超长焦</td>
+<td>300mm以上</td>
+<td>小</td>
+<td>野生动物、运动题材</td>
+<td>远</td>
+<td>透视感弱压缩感强（远近变化不明显），景深浅，强调主题</td>
+</tr>
+</tbody></table>
+<p>注意，上述焦距是全画幅而言的，对于其他画幅需要计算等效焦距</p>
+<p><img src="https://raw.githubusercontent.com/Went-Liang/ImageTG/main/PicGo/img/dengxiaojiaoju.jpg" alt="等效焦距"><br>等效焦距 &#x3D; 裁切系数 x 原焦距，佳能系统的APS-C裁切系数为1.6；尼康、索尼系统的APS-C裁切系数为1.5；而M43系统则为2。<br>同样使用50mm的镜头时，在佳能APS-C相机上等效焦距约为80mm (50mm x 1.6)，其拍出来的视角就会和全画幅相机使用80mm镜头的时候相同。</p>
+<ol start="2">
+<li>焦距越大景深小。焦距变大，相当于放大了照片中的某一个画面，画面被放大后，相当于原本组成一张照片的所有弥散圆都被放大了，这个时候复合人眼判断极限的弥散圆位置将会距离焦点更近，景深也将变得更浅。</li>
+</ol>
+<p>比如微距摄影时（大焦距），景深特别浅，很容易虚焦。</p>
+<h3 id="ISO"><a href="#ISO" class="headerlink" title="ISO"></a>ISO</h3><h3 id="快门"><a href="#快门" class="headerlink" title="快门"></a>快门</h3><h3 id="光圈"><a href="#光圈" class="headerlink" title="光圈"></a>光圈</h3><p>光圈是镜头内一个控制孔径大小的组件，由数个光圈叶片所组成，主要用来控制进光量。<br>光圈F值 &#x3D; 镜头的焦距&#x2F;镜头口径的直径。以f&#x2F;值来表示光圈的大小（数值越小光圈越大），比如f&#x2F; 1 , f&#x2F; 1.4 , f&#x2F; 2 , f&#x2F; 2.8 , f&#x2F; 4 , f&#x2F; 5.6 , f&#x2F; 8 , f&#x2F; 11 , f&#x2F; 16 , f&#x2F; 22，其中f&#x2F; 1表示大光圈。同焦距镜头，那么光圈数值可以理解为光圈直径（半径）的倒数。</p>
+<ol>
+<li><p>光圈越大，进光量越多<br><img src="https://raw.githubusercontent.com/Went-Liang/ImageTG/main/PicGo/img/jingguangliang.png" alt="光圈与进光量"></p>
+</li>
+<li><p>光圈越大，景深越浅，背景越模糊；光圈越小，景深越深，背景越清晰</p>
+</li>
+</ol>
+<p>通常来说，物体反射的光经过透镜折射后的焦点刚好在感光元件上时是最清晰的，但焦点在感光元件前后一定范围内时对人眼来说也是清晰的，将清晰时的感光元件上的面称之为容许弥散圆。<br><img src="https://raw.githubusercontent.com/Went-Liang/ImageTG/main/PicGo/img/misanyaun.png" alt="容许弥散圆"></p>
+<p>由于光圈的存在，折射光线形成的光锥变窄，容许弥散圆对应的前后焦深也变大，景深也变大，如下图所示：<br><img src="https://raw.githubusercontent.com/Went-Liang/ImageTG/main/PicGo/img/jingshen1.png" alt="光圈与景深成反比"></p>
+<h2 id="影像概念"><a href="#影像概念" class="headerlink" title="影像概念"></a>影像概念</h2><h3 id="视角"><a href="#视角" class="headerlink" title="视角"></a>视角</h3><ol>
+<li>画幅越小，视角越小</li>
+<li>焦距越小，视角越大</li>
+</ol>
+<h3 id="景深"><a href="#景深" class="headerlink" title="景深"></a>景深</h3><p>对焦点的前后范围中，影像清晰的深度有多少，称之为景深，即相片对应的现实中清晰的范围，影响景深的3大重要因素：光圈、焦距、拍摄者和被摄物之间的距离。</p>
+<ol>
+<li>光圈越大，景深越小，虚化越明显</li>
+<li>拍摄者和被摄物之间的距离越大，景深越大（与光圈同理，受容许弥散圆对应的前后焦深影响）</li>
+</ol>
+<p>不同画幅的相机就算使用相同镜头和焦距，也会有完全不同的视角。APS-C相机使用50mm来拍摄时，全画幅相机则需要使用80mm的焦距，才能在同样站位上获得相似的构图，也就是因为使用的焦距较长，拍摄出来的画面自然就有较浅的景深。</p>
+<blockquote>
+<p>摄影新手入门：1分钟搞懂焦距是什么？焦距与视角的关系！ - 走路不带风的文章 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/619352287">https://zhuanlan.zhihu.com/p/619352287</a><br><a href="https://www.zhihu.com/column/c_1623821616076537857">https://www.zhihu.com/column/c_1623821616076537857</a><br><a href="https://www.bilibili.com/video/BV1t24y1k7Ye/?spm_id_from=333.337.search-card.all.click&vd_source=668f39404189897ee2f8d0c7596f9f4e">https://www.bilibili.com/video/BV1t24y1k7Ye/?spm_id_from=333.337.search-card.all.click&amp;vd_source=668f39404189897ee2f8d0c7596f9f4e</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>数码</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>数码</tag>
+        <tag>相机</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>c++新特性</title>
     <url>/2023/09/24/cpp-new-feature/</url>
     <content><![CDATA[<p>一些c++新特性</p>
