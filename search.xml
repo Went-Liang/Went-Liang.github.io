@@ -142,7 +142,36 @@
 </blockquote>
 <p>调整策略包括：白色优先，氛围优先。</p>
 <p>自动白平衡功能：即AWB(Auto White Balance)，只要选择这个模式，相机就会自动侦测环境光源、自动完成白平衡调整；<br>自定义白平衡功能：在当前环境下提供白色的样板，给相机看在这个环境色温里变成的颜色，相机自动校正；<br>场景模式：提供场景<br>K模式：手动定义色温</p>
-<h3 id="对焦模式"><a href="#对焦模式" class="headerlink" title="对焦模式"></a>对焦模式</h3><h3 id="RAW"><a href="#RAW" class="headerlink" title="RAW"></a>RAW</h3><p>RAW是未经过任何处理的影像资料，也就是说RAW保留了所有感光元件上搜集的原始资讯，包含曝光、白平衡、色调、颜色、风格等等。</p>
+<h3 id="对焦模式"><a href="#对焦模式" class="headerlink" title="对焦模式"></a>对焦模式</h3><blockquote>
+<p>相机有两段式快门按钮。半按快门时相机会针对画面进行测光和对焦，这个时画面中就会出现绿色框，表示该框框为相机的对焦点、并且已经成功完成对焦的意思，此时将快门完全按下(释放快门)进行拍摄。如果相机出现的是红色框表示相机无法进行对焦，需要再重新半按快门进行对焦、或是选择其他对焦模式。</p>
+</blockquote>
+<p>自动对焦</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>特点</th>
+<th>适用于</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单次自动对焦模式：又称为AF-S(Auto Focus-Single)</td>
+<td>对焦后不会改变对焦位置</td>
+<td>静态场景</td>
+</tr>
+<tr>
+<td>连续自动对焦模式：又称为AF-C(Auto Focus-Continous)</td>
+<td>追踪并对焦物体</td>
+<td>动态场景</td>
+</tr>
+<tr>
+<td>智能自动对焦模式：又称为AF-A(Auto Focus-Automatic)</td>
+<td>自动切换二者</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>手动对焦适用于星空摄影、微距摄影、大光圈下的静物特写等情况，使用时将镜头从AF(Auto Focus，自动对焦) 切换成MF ( Manual Focus，手动对焦)并旋转对焦环即可。</p>
+<h3 id="RAW"><a href="#RAW" class="headerlink" title="RAW"></a>RAW</h3><p>RAW是未经过任何处理的影像资料，也就是说RAW保留了所有感光元件上搜集的原始资讯，包含曝光、白平衡、色调、颜色、风格等等。</p>
 <p>RAW包含更多的画面细节和更佳的画质表现以及更高的动态范围，色彩更是高达12-14 位元。因此在后期制作上不仅可以进行较大范围的曝光值调整、白平衡校正、颜色间也比较不会有断层的状况产生。但文档过大、影响连拍速度。</p>
 <h3 id="动态范围"><a href="#动态范围" class="headerlink" title="动态范围"></a>动态范围</h3><p>动态范围是相机可以在多大范围内捕捉图像的影调细节，通常指由最低值到最高溢出值之间的范围。描述的是相机在单帧内可以记录的最亮和最暗影调之间的比率。</p>
 <p>当你拍摄的图像在光线上有巨大的差异时，更大的动态范围就能获得更大的影调空间。</p>
@@ -189,7 +218,7 @@
 </ol>
 <p>不同画幅的相机就算使用相同镜头和焦距，也会有完全不同的视角。APS-C相机使用50mm来拍摄时，全画幅相机则需要使用80mm的焦距，才能在同样站位上获得相似的构图，也就是因为使用的焦距较长，拍摄出来的画面自然就有较浅的景深。</p>
 <blockquote>
-<p>摄影新手入门：1分钟搞懂焦距是什么？焦距与视角的关系！ - 走路不带风的文章 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/619352287">https://zhuanlan.zhihu.com/p/619352287</a><br><a href="https://www.zhihu.com/column/c_1623821616076537857">https://www.zhihu.com/column/c_1623821616076537857</a><br><a href="https://www.bilibili.com/video/BV1t24y1k7Ye/?spm_id_from=333.337.search-card.all.click&vd_source=668f39404189897ee2f8d0c7596f9f4e">https://www.bilibili.com/video/BV1t24y1k7Ye/?spm_id_from=333.337.search-card.all.click&amp;vd_source=668f39404189897ee2f8d0c7596f9f4e</a><br>光圈、快门、感光度，弄懂摄影基本算入门了 - 王路飞的文章 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/134166476">https://zhuanlan.zhihu.com/p/134166476</a></p>
+<p>摄影新手入门：1分钟搞懂焦距是什么？焦距与视角的关系！ - 走路不带风的文章 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/619352287">https://zhuanlan.zhihu.com/p/619352287</a><br><a href="https://www.zhihu.com/column/c_1623821616076537857">https://www.zhihu.com/column/c_1623821616076537857</a><br><a href="https://www.bilibili.com/video/BV1t24y1k7Ye/?spm_id_from=333.337.search-card.all.click&vd_source=668f39404189897ee2f8d0c7596f9f4e">https://www.bilibili.com/video/BV1t24y1k7Ye/?spm_id_from=333.337.search-card.all.click&amp;vd_source=668f39404189897ee2f8d0c7596f9f4e</a><br>光圈、快门、感光度，弄懂摄影基本算入门了 - 王路飞的文章 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/134166476">https://zhuanlan.zhihu.com/p/134166476</a><br>摄影新手入门：对焦模式怎么选择？一张表看懂相机对焦区域和对焦模式 - 走路不带风的文章 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/619623722">https://zhuanlan.zhihu.com/p/619623722</a></p>
 </blockquote>
 ]]></content>
       <categories>
